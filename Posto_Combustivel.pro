@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,15 +26,26 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        janelaprincipal.cpp
+        janelaprincipal.cpp \
+    dialoglogin.cpp \
+    dialogcadastro.cpp \
+    database.cpp
 
 HEADERS += \
-        janelaprincipal.h
+        janelaprincipal.h \
+    dialoglogin.h \
+    dialogcadastro.h \
+    database.h
 
 FORMS += \
-        janelaprincipal.ui
+        janelaprincipal.ui \
+    dialoglogin.ui \
+    dialogcadastro.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
